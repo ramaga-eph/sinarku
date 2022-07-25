@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="css/costum.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <title>SinarKu</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body style="background-color: #FBEF0F;">
+  <!-- Image and text -->
+ 
+  <nav class="navbar navbar-light bg-yellowflow text-center justify-content-center mb-5 pt-3">
+
+    <a class="navbar-brand" width="100%" href="index.html">
+      <img src="img/logo.png" width="50" height="50" class="d-block mx-auto mb-4" alt="">
+      <h2>SinarKu</h2>
+    </a>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col order-md-1">
+        <h4 class="mb-3">Perhitungan</h4>
+        <form class="needs-validation" action="hasil.php" method="POST">
+          <div class="mb-3">
+            <label for="country">Pilih Tempat</label>
+            <select class="custom-select d-block w-100" id="tempat" name="tempat" required>
+              <option value="Pilihan" disabled selected>Pilih Tempat</option>
+              <option value="Rumah Tinggal">Rumah Tinggal</option>
+              <option value="Perkantoran">Perkantoran</option>
+              <option value="Lembaga pendidikan">Lembaga pendidikan</option>
+              <option value="Hotel dan Restaurant">Hotel dan Restaurant</option>
+              <option value="Rumah Sakit/Balai Pengobatan">Rumah Sakit/Balai Pengobatan</option>
+              <option value="Pertokoan/ruang pamer">Pertokoan/ruang pamer</option>
+              <option value="Industri (umum)">Industri (umum)</option>
+              <option value="Rumah ibadah">Rumah ibadah</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="country">Pilih Ruang</label>
+            <select class="custom-select d-block w-100" id="ruangan" name="ruang" required>
+              <option value="Pilihan" disabled selected>Pilih Ruangan</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="username">E <span class="text-muted">(Intensitas Penerangan)</span></label>
+            <div class="input-group">
+              <input type="text" class="form-control" onkeypress="return hanyaAngka(event)" id="output_e" name="e"
+                placeholder="Nilai Intensitas Penerangan" readonly value="" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your username is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">p <span class="text-muted">(Panjang)</span></label>
+            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="panjang"
+              placeholder="Inputkan Panjang">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email">l <span class="text-muted">(Lebar)</span></label>
+            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="lebar"
+              placeholder="Inputkan Lebar">
+            <div class="invalid-feedback">
+              Luas
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email">A<span class="text-muted">(Luas)</span></label>
+            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="luas" name="l"
+              placeholder="Luas" readonly>
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">N <span class="text-muted">(Jumlah Armatur)</span></label>
+            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="address" name="n"
+              placeholder="Inputkan Jumlah Armatur" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">n <span class="text-muted">(Jumlah Lampu Dalam 1 titik armatur)</span></label>
+            <input type="text" onkeypress="return hanyaAngka(event)" class="form-control" id="address2" name="lampu"
+              placeholder="Inputkan Jumlah Lampu Dalam 1 titik armatur">
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">d <span class="text-muted">(Faktor Depresiasi)</span></label>
+            <select class="custom-select d-block w-100" id="country" name="d" required>
+              <option disabled selected>Pilih Nilai Faktor Depresiasi</option>
+              <option value="0.6">0,6 ( Pengotoran Berat )</option>
+              <option value="0.7">0,7 ( Pengotoran Biasa )</option>
+              <option value="0.8">0,8 ( Pengotoran Ringan )</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="address2">UF <span class="text-muted">(Faktor Pemanfaatan)</span></label>
+            <select class="custom-select d-block w-100" id="country" name="uf" required>
+              <option disabled selected>Pilih Nilai Faktor Pemanfaatan</option>
+              <option value="0.5">0,5 ( Cukup Terang )</option>
+              <option value="0.6">0,6 ( Terang )</option>
+              <option value="0.7">0,7 ( Sangat Terang - <b>Disarankan</b>)</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="address2">H <span class="text-muted">(Fluks Cahaya Spesifikasi/Efikasi)</span></label>
+            <select class="custom-select d-block w-100" id="country" name="h" required>
+              <option disabled selected>Pilih Nilai Fluks Cahaya Spesifikasi/Efikasi</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80</option>
+              <option value="90">90 (Disarankan)</option>
+            </select>
+          </div>
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Hitung Hasil</button>
+        </form>
+        <a href="index.html" class="btn btn-primary btn-lg btn-block mt-4">Kembali</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="  mt-5  text-muted text-center text-small ">
+    <div class="bg-yellowflow py-5 pt-5">
+      <img src="img/image 2.png" alt="" srcset="">
+      <p class="mb-1">&copy; Ramaga Putra</p>
+    </div>
+  </div>
+  
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      var a = $("#tempat > option:selected").val();
+      if (a == "Pilihan") {
+        $("#ruangan option").remove();
+        $("#ruangan").append("<option disabled selected>Pilih Ruangan</option><option disabled selected>Silahkan Pilih Tempat terlebih Dahulu</option>");
+      }
+      $("#tempat").change(function () {
+        var el = $(this);
+        if ((el.val() === "Rumah Tinggal") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Teras'>Teras</option><option value='Ruang tamu'>Ruang tamu</option><option value='Ruang makan'>Ruang makan</option><option value='Ruang kerja'>Ruang kerja</option><option value='Kamar tidur'>Kamar tidur</option><option value='Kamar mandi'>Kamar mandi</option><option value='Dapur'>Dapur</option><option value='Garasi'>Garasi</option>");
+        }
+        else if ((el.val() === "Perkantoran") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Ruang resepsionis'>Ruang resepsionis</option><option value='Ruang direktur'>Ruang direktur</option><option value='Ruang kerja'>Ruang kerja</option><option value='Ruang komputer'>Ruang komputer</option><option value='Ruang rapat'>Ruang rapat</option><option value='Ruang gambar'>Ruang gambar</option><option value='Gudang arsip'>Gudang arsip</option><option value='Ruang arsip aktif'>Ruang arsip aktif</option><option value='Ruang tangga darurat'>Ruang tangga darurat</option><option value='Ruang parkir'>Ruang parkir</option>");
+
+        }
+        else if ((el.val() === "Lembaga pendidikan") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Ruang kelas'>Ruang kelas</option><option value='Perpustakaan'>Perpustakaan</option><option value='Laboratorium'>Laboratorium</option><option value='Ruang praktek komputer'>Ruang praktek komputer</option><option value='Ruang laboratorium bahas'>Ruang laboratorium bahas</option><option value='Ruang guru'>Ruang guru</option><option value='Ruang olahraga'>Ruang olahraga</option><option value='Ruang gambar'>Ruang gambar</option><option value='Kantin'>Kantin</option>");
+
+        }
+        else if ((el.val() === "Hotel dan Restaurant") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Ruang resepsionis dan kasir'>Ruang resepsionis dan kasir</option><option value='Lobi'>Lobi</option><option value='Ruang serba guna'>Ruang serba guna</option><option value='Ruang rapat'>Ruang rapat</option><option value='Ruang makan'>Ruang makan</option><option value='Kafetaria'>Kafetaria</option><option value='Kamar tidur'>Kamar tidur</option><option value='Koridor'>Koridor</option><option value='Dapur'>Dapur</option>");
+
+        }
+        else if ((el.val() === "Rumah Sakit/Balai Pengobatan") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Ruang tunggu'>Ruang tunggu</option><option value='Ruang rawat inap'>Ruang rawat inap</option><option value='Ruang operasi, ruang bersalin'>Ruang operasi, ruang bersalin</option><option value='Laboratorium'>Laboratorium</option><option value='Ruang rekreasi dan rehabilitasi'>Ruang rekreasi dan rehabilitasi</option><option value='Ruang koridor siang hari '>Ruang koridor siang hari </option><option value='Ruang koridor malam hari'>Ruang koridor malam hari  </option><option value='Ruang kantor staff'>Ruang kantor staff</option><option value='Kamar mandi & toilet pasien'>Kamar mandi & toilet pasien</option>");
+
+        }
+        else if ((el.val() === "Pertokoan/ruang pamer") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Ruang pamer dengan obyek berukuran besar (misalnya mobil)'>Ruang pamer dengan obyek berukuran besar (misalnya mobil)</option><option value='Area penjualan kecil'>Area penjualan kecil</option><option value='Area penjualan besar'>Area penjualan besar</option><option value='Area kasir'>Area kasir</option><option value='Toko kue dan makanan'>Toko kue dan makanan</option><option value='Toko bunga'>Toko bunga</option><option value='Toko buku dan alat tulis/ gambar'>Toko buku dan alat tulis/ gambar</option><option value='Toko perhiasan, arloji'>Toko perhiasan, arloji</option><option value='Toko barang kulit dan sepatu'>Toko barang kulit dan sepatu</option><option value='Toko pakaian'>Toko pakaian</option><option value='Pasar swalayan'>Pasar swalayan</option><option value='Toko mainan'>Toko mainan</option><option value='Toko alat listrik'>Toko alat listrik (TV, radio/tape, mesin cuci dan lain-lain)</option>");
+
+        }
+        else if ((el.val() === "Industri (umum)") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Gudang'>Gudang</option><option value='Pekerjaan kasar'>Pekerjaan kasar</option><option value='Pekerjaan menengah'>Pekerjaan menengah</option><option value='Pekerjaan halus'>Pekerjaan halus</option><option value='Pekerjaan amat halus'>Pekerjaan amat halus</option><option value='Pemeriksaan warna'>Pemeriksaan warna</option>");
+
+        }
+        else if ((el.val() === "Rumah ibadah") && ('el:selected')) {
+          $("#ruangan option").remove();
+          $("#ruangan").append(" <option value='Pilihan' disabled selected>Pilih Ruangan</option><option value='Masjid'>Masjid</option><option value='Gereja'>Gereja</option><option value='Vihara'>Vihara</option>");
+        }
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      var al = $("#tempat > option:selected").val();
+      if (al == "Pilihan") {
+        $("#ruangan option").remove();
+        $("#ruangan").append("<option disabled selected>Silahkan Pilih Tempat terlebih Dahulu</option>");
+
+      }
+      $("#ruangan").change(function () {
+        var el_ruangan = $(this).val();
+        if ((el_ruangan === "Teras") && ('el_ruangan:selected') || (el_ruangan === "Garasi") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("60");
+        }
+        else if ((el_ruangan === "Ruang koridor malam hari") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("50");
+        }
+        else if ((el_ruangan === "Koridor") && ('el_ruangan:selected') || (el_ruangan === "Ruang parkir") && ('el_ruangan:selected') || (el_ruangan === "Gudang") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("100");
+        }
+        else if ((el_ruangan === "Ruang tamu") && ('el_ruangan:selected') || (el_ruangan === "Gudang arsip") && ('el_ruangan:selected') || (el_ruangan === "Ruang tangga darurat") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("150");
+        }
+        else if ((el_ruangan === "Ruang koridor siang hari") && ('el_ruangan:selected') || (el_ruangan === "Vihara") && ('el_ruangan:selected') || (el_ruangan === "Kantin") && ('el_ruangan:selected') || (el_ruangan === "Kafetaria") && ('el_ruangan:selected') || (el_ruangan === "Pekerjaan kasar") && ('el_ruangan:selected') || (el_ruangan === "Ruang serba guna") && ('el_ruangan:selected') || (el_ruangan === "Masjid") && ('el_ruangan:selected') || (el_ruangan === "Kamar mandi & toilet pasien") && ('el_ruangan:selected') || (el_ruangan === "Gereja") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("200");
+        }
+        else if ((el_ruangan === "Ruang rawat inap") && ('el_ruangan:selected') || (el_ruangan === "Kamar mandi") && ('el_ruangan:selected') || (el_ruangan === "Ruang rekreasi dan rehabilitasi") && ('el_ruangan:selected') || (el_ruangan === "Toko alat listrik (TV, radio/tape, mesin cuci dan lain-lain)") && ('el_ruangan:selected') || (el_ruangan === "Toko kue dan makanan") && ('el_ruangan:selected') || (el_ruangan === "Toko bunga") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("250");
+        }
+        else if ((el_ruangan === "Ruang operasi, ruang bersalin") && ('el_ruangan:selected') || (el_ruangan === "Ruang olahraga") && ('el_ruangan:selected') || (el_ruangan === "Perpustakaan") && ('el_ruangan:selected') || (el_ruangan === "Area penjualan kecil") && ('el_ruangan:select ed') || (el_ruangan === "Ruang arsip aktif") && ('el_ruangan:selected') || (el_ruangan === "Toko buku dan alat tulis/ gambar") && ('el_ruangan:selected') || (el_ruangan === "Ruang guru") && ('el_ruangan:selected') || (el_ruangan === "Ruang resepsionis dan kasir") && ('el_ruangan:selected') || (el_ruangan === "Ruang laboratorium bahas") && ('el_ruangan:selected') || (el_ruangan === "Ruang resepsionis") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("300");
+        }
+        else if ((el_ruangan === "Ruang kelas") && ('el_ruangan:selected') || (el_ruangan === "Lobi") && ('el_ruangan:selected') || (el_ruangan === "Ruang kantor staff") && ('el_ruangan:selected') || (el_ruangan === "Ruang direktur") && ('el_ruangan:selected') || (el_ruangan === "Ruang komputer") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("350");
+        }
+        else if ((el_ruangan === "Kamar tidur") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("400");
+        }
+        else if ((el_ruangan === "Area kasir") && ('el_ruangan:selected') || (el_ruangan === "Toko barang kulit dan sepatu") && ('el_ruangan:selected') || (el_ruangan === "Area penjualan besar") && ('el_ruangan:selected') || (el_ruangan === "Ruang pamer dengan obyek berukuran besar (misalnya mobil)") && ('el_ruangan:selected') || (el_ruangan === "Pasar swalayan") && ('el_ruangan:selected') || (el_ruangan === "Ruang praktek komputer") && ('el_ruangan:selected') || (el_ruangan === "Toko mainan") && ('el_ruangan:selected') || (el_ruangan === "Ruang makan") && ('el_ruangan:selected') || (el_ruangan === "Toko pakaian") && ('el_ruangan:selected') || (el_ruangan === "Pekerjaan menengah") && ('el_ruangan:selected') || (el_ruangan === "Toko perhiasan, arloji") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("500");
+        }
+        else if ((el_ruangan === "Dapur") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("550");
+        }
+        else if ((el_ruangan === "Ruang rapat") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("600");
+        }
+        else if ((el_ruangan === "Ruang kerja") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("650");
+        }
+        else if ((el_ruangan === "Pemeriksaan warna") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("750");
+        }
+        else if ((el_ruangan === "Laboratorium") && ('el_ruangan:selected') || (el_ruangan === "Pekerjaan halus") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("1000");
+        }
+        else if ((el_ruangan === "Ruang gambar") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("1500");
+        }
+        else if ((el_ruangan === "Pekerjaan amat halus") && ('el_ruangan:selected')) {
+          $("#output_e").empty();
+          $('#output_e').val("2000");
+        }
+
+
+      });
+    });
+
+  </script>
+  <script type='text/javascript'>
+    $(document).ready(function () {
+      $('#lebar').keyup(function () {
+        var panjang = $("#panjang").val();
+        var lebar = $('#lebar').val();
+        var luas = panjang * lebar;
+        $('#luas').val(luas);
+      });
+    });
+
+  </script>
+  <script>
+    function hanyaAngka(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+      if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+        return false;
+      return true;
+    }
+
+  </script>
+</body>
+
+</html>

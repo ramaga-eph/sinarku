@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <select id="source" name="source">
+        <option >All Types</option>
+        <option value="AUDIENCES SEGMENT">AUDIENCES SEGMENT</option>
+        <option selected value="REGIONAL">REGIONAL</option>
+        <option value="LOCATIONS">LOCATIONS</option>
+    </select>
+    <select id="status" name="status">
+        <option>All Packages</option>
+    </select>
+    <script>
+        $(document).ready(function () {
+            var a = $("#source > option:selected").val();
+            if (a == "REGIONAL") {
+                $("#status option").remove();
+                $("#status").append("<option value=''>All Packages</option><option value='Airports'>Airports</option>");
+            }
+            $("#source").change(function () {
+                var el = $(this);
+                if ((el.val() === "AUDIENCES SEGMENT") && ('el:selected')) {
+                    $("#status option").remove();
+                    $("#status").append("<option value=''>All Packages</option><option value='Youth'>Youth</option><option value='Working Adults'>Working Adults</option><option value='Family'>Family</option><option value='Travellers'>Travellers</option>");
+                }
+                else if ((el.val() === "REGIONAL") && ('el:selected')) {
+                    $("#status option").remove();
+                    $("#status").append("<option value=''>All Packages</option><option value='Airports'>Airports</option>");
+
+                }
+
+                else if ((el.val() === "LOCATIONS") && ('el:selected')) {
+                    $("#status option").remove();
+                    $("#status").append("<option value=''>All Packages</option><option value=''>KL</option>");
+
+                }
+            });
+
+        });
+    </script>
+
+<option value='Teras'>Teras</option>
+<option value='Ruang tamu'>Ruang tamu</option>
+<option value='Ruang makan'>Ruang makan</option>
+<option value='Ruang kerja'>Ruang kerja</option>
+<option value='Kamar tidur'>Kamar tidur</option>
+<option value='Kamar mandi'>Kamar mandi</option>
+<option value='Dapur'>Dapur</option>
+<option value='Garasi'>Garasi</option>
+
+<option value='Ruang resepsionis'>Ruang resepsionis</option><option value='Ruang direktur'>Ruang direktur</option><option value='Ruang kerja'>Ruang kerja</option><option value='Ruang komputer'>Ruang komputer</option><option value='Ruang rapat'>Ruang rapat</option><option value='Ruang gambar'>Ruang gambar</option><option value='Gudang arsip'>Gudang arsip</option><option value='Ruang arsip aktif'>Ruang arsip aktif</option><option value='Ruang tangga darurat'>Ruang tangga darurat</option><option value='Ruang parkir'>Ruang parkir</option>
+
+<option value='Ruang kelas'>Ruang kelas</option><option value='Perpustakaan'>Perpustakaan</option><option value='Laboratorium'>Laboratorium</option><option value='Ruang praktek komputer'>Ruang praktek komputer</option><option value='Ruang laboratorium bahas'>Ruang laboratorium bahas</option><option value='Ruang guru'>Ruang guru</option><option value='Ruang olahraga'>Ruang olahraga</option><option value='Ruang gambar'>Ruang gambar</option><option value='Kantin'>Kantin</option>
+
+<option value='Ruang resepsionis dan kasir'>Ruang resepsionis dan kasir</option><option value='Lobi'>Lobi</option><option value='Ruang serba guna'>Ruang serba guna</option><option value='Ruang rapat'>Ruang rapat</option><option value='Ruang makan'>Ruang makan</option><option value='Kafetaria'>Kafetaria</option><option value='Kamar tidur'>Kamar tidur</option><option value='Koridor'>Koridor</option><option value='Dapur'>Dapur</option>
+
+<option value='Ruang pamer dengan obyek berukuran besar (misalnya mobil)'>Ruang pamer dengan obyek berukuran besar (misalnya mobil)</option><option value='Area penjualan kecil'>Area penjualan kecil</option><option value='Area penjualan besar'>Area penjualan besar</option><option value='Area kasir'>Area kasir</option><option value='Toko kue dan makanan'>Toko kue dan makanan</option><option value='Toko bunga'>Toko bunga</option><option value='Toko buku dan alat tulis/ gambar'>Toko buku dan alat tulis/ gambar</option><option value='Toko perhiasan, arloji'>Toko perhiasan, arloji</option><option value='Toko barang kulit dan sepatu'>Toko barang kulit dan sepatu</option><option value='Toko pakaian'>Toko pakaian</option><option value='Pasar swalayan'>Pasar swalayan</option><option value='Toko mainan'>Toko mainan</option><option value='Toko alat listrik'>Toko alat listrik (TV, radio/tape, mesin cuci dan lain-lain)</option>
+
+<option value='Gudang'>Gudang</option><option value='Pekerjaan kasar'>Pekerjaan kasar</option><option value='Pekerjaan menengah'>Pekerjaan menengah</option><option value='Pekerjaan halus'>Pekerjaan halus</option><option value='Pekerjaan amat halus'>Pekerjaan amat halus</option><option value='Pemeriksaan warna'>Pemeriksaan warna</option>
+
+<option value='Masjid'>Masjid</option><option value='Gereja'>Gereja</option><option value='Vihara'>Vihara</option>
+
+
+
+else if ((el_ruangan === "Ruang tamu") && ('el_ruangan:selected')) {
+    $("#output_e").empty();
+    $('#output_e').val("150");
+  }
+  else if ((el_ruangan === "Ruang makan") && ('el_ruangan:selected') || (el_ruangan === "Ruang tidur") && ('el_ruangan:selected') || (el_ruangan === "Kamar mandi") && ('el_ruangan:selected') || (el_ruangan === "Dapur") && ('el_ruangan:selected')) {
+    $("#output_e").empty();
+    $('#output_e').val("250");
+  }
+  else if ((el_ruangan === "Ruang kerja") && ('el_ruangan:selected')) {
+    $("#output_e").empty();
+    $('#output_e').val("300");
+  }
+</body>
+
+</html>
+
+|| (el_ruangan === "Ruang koridor siang hari") && ('el_ruangan:selected') || (el_ruangan === "Vihara") && ('el_ruangan:selected')|| (el_ruangan === "Kantin") && ('el_ruangan:selected')|| (el_ruangan === "Kafetaria") && ('el_ruangan:selected')|| (el_ruangan === "Pekerjaan kasar") && ('el_ruangan:selected')|| (el_ruangan === "Ruang serba guna") && ('el_ruangan:selected')|| (el_ruangan === "Masjid") && ('el_ruangan:selected')|| (el_ruangan === "Kamar mandi & toilet pasien") && ('el_ruangan:selected')|| (el_ruangan === "Gereja") && ('el_ruangan:selected')
+
+//250
+
+|| (el_ruangan === "Ruang rawat inap") && ('el_ruangan:selected')|| (el_ruangan === "Kamar mandi") && ('el_ruangan:selected')|| (el_ruangan === "Ruang rekreasi dan rehabilitasi") && ('el_ruangan:selected')|| (el_ruangan === "Toko alat listrik (TV, radio/tape, mesin cuci dan lain-lain)") && ('el_ruangan:selected')|| (el_ruangan === "Toko kue dan makanan") && ('el_ruangan:selected')|| (el_ruangan === "Toko bunga") && ('el_ruangan:selected')
+
+//300
+
+(el_ruangan === "Ruang operasi, ruang bersalin") && ('el_ruangan:selected')|| (el_ruangan === "Ruang olahraga") && ('el_ruangan:selected')|| (el_ruangan === "Perpustakaan") && ('el_ruangan:selected')|| (el_ruangan === "Area penjualan kecil") && ('el_ruangan:select ed')|| (el_ruangan === "Ruang arsip aktif") && ('el_ruangan:selected')|| (el_ruangan === "Toko buku dan alat tulis/ gambar) && ('el_ruangan:selected')|| (el_ruangan === "Ruang guru") && ('el_ruangan:selected')|| (el_ruangan === "Ruang resepsionis dan kasir") && ('el_ruangan:selected')|| (el_ruangan === "Ruang laboratorium bahas") && ('el_ruangan:selected')|| (el_ruangan === "Ruang resepsionis") && ('el_ruangan:selected')
+
+//350
+
+(el_ruangan === "Ruang kelas") && ('el_ruangan:selected')|| (el_ruangan === "Lobi") && ('el_ruangan:selected')|| (el_ruangan === "Ruang kantor staff") && ('el_ruangan:selected')|| (el_ruangan === "Ruang direktur") && ('el_ruangan:selected')|| (el_ruangan === "Ruang komputer") && ('el_ruangan:selected')
+
+//400
+
+|| (el_ruangan === "Kamar tidur") && ('el_ruangan:selected')
+
+//500
+
+el_ruangan === "Area kasir") && ('el_ruangan:selected')|| (el_ruangan === "Toko barang kulit dan sepatu") && ('el_ruangan:selected')|| (el_ruangan === "Area penjualan besar") && ('el_ruangan:selected')|| (el_ruangan === "Ruang pamer dengan obyek berukuran besar (misalnya mobil)") && ('el_ruangan:selected')|| (el_ruangan === "Pasar swalayan") && ('el_ruangan:selected')|| (el_ruangan === "Ruang praktek komputer") && ('el_ruangan:selected')|| (el_ruangan === "Toko mainan") && ('el_ruangan:selected')|| (el_ruangan === "Ruang makan") && ('el_ruangan:selected')|| (el_ruangan === "Toko pakaian") && ('el_ruangan:selected')|| (el_ruangan === "Pekerjaan menengah") && ('el_ruangan:selected')|| (el_ruangan === "Toko perhiasan, arloji") && ('el_ruangan:selected')
+
+//550
+
+|| (el_ruangan === "Dapur") && ('el_ruangan:selected')
+
+//600 
+
+|| (el_ruangan === "Ruang rapat") && ('el_ruangan:selected')
+
+//650 
+
+|| (el_ruangan === "Ruang kerja") && ('el_ruangan:selected')
+
+//750 
+
+|| (el_ruangan === "Pemeriksaan warna") && ('el_ruangan:selected')
+
+//1000 
+
+(el_ruangan === "Laboratorium") && ('el_ruangan:selected')|| (el_ruangan === "Pekerjaan halus") && ('el_ruangan:selected')
+
+//1500 
+
+|| (el_ruangan === "Ruang gambar") && ('el_ruangan:selected')
+
+//2000 
+
+|| (el_ruangan === "Pekerjaan amat halus") && ('el_ruangan:selected')
+
+

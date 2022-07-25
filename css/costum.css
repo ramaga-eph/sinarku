@@ -1,0 +1,27 @@
+.bg-yellowflow{
+    background-color: #FFFDE7 !important;
+    
+}
+footer{
+    background-color: #FFFDE7 !important;
+        bottom:0;
+        height: 30%;
+        width: 100%;
+
+}
+body .bg-yello{
+    background-color: #FBEF0F !important;
+}
+.btn-primary{
+    background-color: #FFFDE7 !important;
+    color: black !important;
+    border: #FFFDE7 !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .pdf_data {
+     width: max-content;
+     height: auto;
+    }
+  }
+  
